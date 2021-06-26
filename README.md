@@ -8,6 +8,20 @@
 
 - vec_reverse(name_vec) - возвращает реверснутый вектор
 
+- vec_move(name_vec,start_pos,amount,target) - перемещает векторе amount чисел с позиции start_pos на позицию target
+```
+//Пример//
+vector<int> pumpkin = {1, 3, 5, 7, 12};
+vec_show(pumpkin);
+
+vec_move(pumpkin, 3, 2, 1);
+vec_show(pumpkin);
+==Вывод==
+1 3 5 7 12
+1 7 12 3 5
+//======//
+```
+
 #### Функции для работы с двумерными массивами/векторами
 
 - mtx_init(row,col) - создает двумерную матрицу векторов, заполнение с клавиатуры. row - количество строк, col - количество столбцов. row,col - int
@@ -23,7 +37,6 @@
 vector<vector<int>> pumpkin = mtx_init(3, 3);
 cout << endl;
 mtx_show(pumpkin);
-cout << endl;
 mtx_size_show(pumpkin);
 //======//
 ```
