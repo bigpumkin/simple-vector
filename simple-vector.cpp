@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <conio.h>
@@ -7,29 +8,17 @@ using namespace std;
 template <class Type> //вывод вектора
 void vec_show(vector<Type> container)
 {
-	int unsigned size = container.size();
-	for (int unsigned i = 0; i < size; ++i)
+	for (auto elem : container)
 	{
-		cout << container[i] << " ";
+		cout << elem << " ";
 	}
-
 	cout << endl;
 }
 
 template <class Type> //реверс вектора
 vector<Type> vec_reverse(vector<Type> container)
 {
-	int buffer;
-	int unsigned container_size = container.size();
-	int unsigned container_size_div2 = container.size() / 2;
-
-	for (int unsigned i = 0; i < container_size_div2; ++i)
-	{
-		buffer = container[i];
-		container[i] = container[container_size - i - 1];
-		container[container_size - i - 1] = buffer;
-	}
-
+	std::reverse(container.begin(), container.end());
 	return container;
 }
 
@@ -148,12 +137,4 @@ template <class Type> //вывод размера матрицы
 void mtx_size_show(vector<vector<Type>> container)
 {
 	cout << mtx_size(container).first << " x " << mtx_size(container).second << endl;
-}
-
-int main()
-{
-	
-	system("pause");
-	return 0;
-	
 }
